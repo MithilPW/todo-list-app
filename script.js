@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     li.querySelector("button").addEventListener("click", (e) => {
       e.stopPropagation(); //prevent toggle from firing
-      tasks = task.filter((t) => t.id === task.id);
+      tasks = task.filter((t) => t.id !== task.id);
       li.remove();
       saveTasks();
     });
@@ -55,3 +55,4 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 });
+
